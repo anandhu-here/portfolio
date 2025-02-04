@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 150 7% 98%;
+    --foreground: 150 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 150 10% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 10% 10%;
+    --primary: 150 10% 36%; /* Based on #516559 */
+    --primary-foreground: 150 10% 98%;
+    --secondary: 150 8% 92%;
+    --secondary-foreground: 150 10% 20%;
+    --muted: 150 5% 96%;
+    --muted-foreground: 150 5% 45%;
+    --accent: 150 15% 40%;
+    --accent-foreground: 150 10% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 150 8% 90%;
+    --input: 150 8% 90%;
+    --ring: 150 10% 36%;
+    --radius: 0.5rem;
+    --chart-1: 150 30% 36%;
+    --chart-2: 180 30% 45%;
+    --chart-3: 120 30% 45%;
+    --chart-4: 90 30% 45%;
+    --chart-5: 210 30% 45%;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142.4 71.8% 29.2%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .border-radiant {
+    position: relative;
+    --gradient-x: 0%;
+    --gradient-y: 0%;
+    --gradient-intensity: 0px;
+  }
+
+  .border-radiant::after {
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    background: radial-gradient(
+      var(--gradient-intensity) at var(--gradient-x) var(--gradient-y),
+      hsl(var(--primary)) 15%,
+      hsl(var(--border)) 30%
+    );
+    border-radius: inherit;
+    content: "";
+    z-index: -1;
+  }
+
+  .no-aliasing {
+    image-rendering: optimizeSpeed; /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges; /* Firefox                        */
+    image-rendering: -o-crisp-edges; /* Opera                          */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+    image-rendering: pixelated; /* Universal support since 2021   */
+    image-rendering: optimize-contrast; /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor; /* IE8+                           */
+  }
+}
