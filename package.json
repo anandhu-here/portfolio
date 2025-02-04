@@ -2,7 +2,7 @@
   "name": "portfolio",
   "private": true,
   "version": "1.0.0",
-  "homepage": "https://anandhu-here.github.io",
+  "homepage": "https://anandhu-here.github.io/portfolio",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
