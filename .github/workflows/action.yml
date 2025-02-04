@@ -20,10 +20,9 @@ jobs:
         run: npm run build
 
       - name: Deploy to Development
-        if: github.ref == 'refs/heads/main'
-        uses: FirebaseExtended/action-hosting-deploy@v0
+        uses: w9jds/firebase-action@v13.22.1
         with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
-          projectId: portfolio-cf8c4
-          channelId: live
+          args: deploy --only hosting:main
+        env:
+          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          PROJECT_PATH: .
