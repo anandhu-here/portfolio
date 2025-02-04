@@ -4,10 +4,24 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/portfolio/",
+  // Remove the base: "/portfolio/" line since you're deploying to root
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    outDir: "dist",
+    sourcemap: true,
+    // Add proper module handling
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+        format: "es",
+        entryFileNames: "assets/[name]-[hash].js",
+        chunkFileNames: "assets/[name]-[hash].js",
+        assetFileNames: "assets/[name]-[hash].[ext]",
+      },
     },
   },
 });
