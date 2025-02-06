@@ -3,7 +3,6 @@ import { ThemeProvider } from "./components/theme-provider";
 import EducationCard from "./components/education/education-card";
 import ExperienceTree from "./components/experience-tree/experience-tree";
 import ContactCard from "./components/cards/contact-card";
-import ThemeCard from "./components/cards/theme-card";
 import FeatProjectsCard from "./components/projects/feat-projects-card";
 import SkillsCard from "./components/skills-grid/skills-card";
 import UserProfileCard from "./components/cards/user-profile-card";
