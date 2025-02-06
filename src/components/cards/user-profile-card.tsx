@@ -39,12 +39,12 @@ const UserProfileCard = () => {
         </div>
 
         <div className="flex gap-3">
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/anandhu-here" target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" size="icon">
               <Github className="h-5 w-5" />
             </Button>
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/anandhu-satheesh" target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" size="icon">
               <Linkedin className="h-5 w-5" />
             </Button>
