@@ -39,9 +39,8 @@ const SkillIcon = ({ name, delay }: Props) => {
           onClick={handleClick}
         >
           <i
-            className={`text-5xl transition-colors devicon-${name}-original devicon-${name}-plain  ${
-              isExpanding ? "animate-clean-bounce text-primary dark:text-primary" : "text-stone-600 dark:text-stone-200"
-            } `}
+            className={`text-5xl transition-colors devicon-${name}-original devicon-${name}-plain  ${isExpanding ? "animate-clean-bounce text-primary dark:text-primary" : "text-stone-600 dark:text-stone-200"
+              } `}
           ></i>
           {/* <p className={"text-center text-sm font-medium leading-none mt-1"}>{iconName}</p> */}
         </div>

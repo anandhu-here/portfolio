@@ -4,68 +4,74 @@
 
 @layer base {
   :root {
-    --background: 150 7% 98%;
-    --foreground: 150 10% 10%;
+    --background: 30 33% 98%;
+    --foreground: 24 15% 15%;
     --card: 0 0% 100%;
-    --card-foreground: 150 10% 10%;
+    --card-foreground: 24 15% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 150 10% 10%;
-    --primary: 150 10% 36%; /* Based on #516559 */
-    --primary-foreground: 150 10% 98%;
-    --secondary: 150 8% 92%;
-    --secondary-foreground: 150 10% 20%;
-    --muted: 150 5% 96%;
-    --muted-foreground: 150 5% 45%;
-    --accent: 150 15% 40%;
-    --accent-foreground: 150 10% 98%;
+    --popover-foreground: 24 15% 15%;
+    --primary: 24 75% 65%; /* #e58d52 */
+    --primary-foreground: 30 33% 98%;
+    --secondary: 30 20% 94%;
+    --secondary-foreground: 24 15% 20%;
+    --muted: 30 15% 94%;
+    --muted-foreground: 24 10% 45%;
+    --accent: 200 70% 65%; /* Complementary blue */
+    --accent-foreground: 30 33% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 150 8% 90%;
-    --input: 150 8% 90%;
-    --ring: 150 10% 36%;
-    --radius: 0.5rem;
-    --chart-1: 150 30% 36%;
-    --chart-2: 180 30% 45%;
-    --chart-3: 120 30% 45%;
-    --chart-4: 90 30% 45%;
-    --chart-5: 210 30% 45%;
+    --border: 30 15% 90%;
+    --input: 30 15% 90%;
+    --ring: 24 75% 65%;
+    --radius: 0.75rem;
+    --chart-1: 24 75% 65%; /* Primary orange */
+    --chart-2: 200 70% 65%; /* Complementary blue */
+    --chart-3: 150 60% 60%; /* Supporting green */
+    --chart-4: 270 55% 65%; /* Supporting purple */
+    --chart-5: 340 65% 65%; /* Supporting pink */
   }
 
   .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 0 0% 95%;
-    --card: 24 9.8% 10%;
-    --card-foreground: 0 0% 95%;
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 142.1 70.6% 45.3%;
-    --primary-foreground: 144.9 80.4% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 12 6.5% 15.1%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 85.7% 97.3%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 142.4 71.8% 29.2%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --background: 24 25% 10%;
+    --foreground: 30 15% 98%;
+    --card: 24 20% 12%;
+    --card-foreground: 30 15% 98%;
+    --popover: 24 20% 12%;
+    --popover-foreground: 30 15% 98%;
+    --primary: 24 75% 65%; /* Keeping the orange vibrant */
+    --primary-foreground: 24 15% 10%;
+    --secondary: 24 20% 16%;
+    --secondary-foreground: 30 15% 98%;
+    --muted: 24 20% 16%;
+    --muted-foreground: 30 10% 75%;
+    --accent: 200 70% 65%; /* Keeping accent vibrant */
+    --accent-foreground: 30 15% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 85% 97%;
+    --border: 24 20% 18%;
+    --input: 24 20% 18%;
+    --ring: 24 75% 65%;
+    --chart-1: 24 75% 65%; /* Primary orange */
+    --chart-2: 200 70% 65%; /* Complementary blue */
+    --chart-3: 150 60% 60%; /* Supporting green */
+    --chart-4: 270 55% 65%; /* Supporting purple */
+    --chart-5: 340 65% 65%; /* Supporting pink */
     color-scheme: dark;
   }
 }
 
 @layer base {
+  html,
+  body {
+    @apply h-full overflow-auto;
+  }
+
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground min-h-screen;
   }
 }
 
@@ -94,12 +100,12 @@
   }
 
   .no-aliasing {
-    image-rendering: optimizeSpeed; /* STOP SMOOTHING, GIVE ME SPEED  */
-    image-rendering: -moz-crisp-edges; /* Firefox                        */
-    image-rendering: -o-crisp-edges; /* Opera                          */
-    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-    image-rendering: pixelated; /* Universal support since 2021   */
-    image-rendering: optimize-contrast; /* CSS3 Proposed                  */
-    -ms-interpolation-mode: nearest-neighbor; /* IE8+                           */
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
   }
 }

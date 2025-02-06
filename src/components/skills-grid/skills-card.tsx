@@ -5,7 +5,7 @@ const SkillsCard = () => {
   return (
     <Card>
       <CardHeader className={"text-xl font-bold"}>Skills</CardHeader>
-      <CardContent className="overflow-x-auto">
+      <CardContent className="overflow-x-auto px-2">
         <SkillsGrid />
       </CardContent>
     </Card>

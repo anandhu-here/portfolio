@@ -1,8 +1,10 @@
+
+// SkillsGrid.jsx
 import { TooltipProvider } from "../ui/tooltip";
 import SkillIcon from "./skill-icon";
 import SkillsGroup from "./skills-group";
 
-const languages = ["typescript", "javascript", "python", "csharp", "c", "bash"]; // add go soon
+const languages = ["typescript", "javascript", "python", "bash"];
 const frontend = ["html5", "css3", "react", "capacitor", "redux", "materialui", "tailwindcss"];
 const technologies = [
   "git",
@@ -17,11 +19,9 @@ const technologies = [
   "apple",
   "unity",
   "blender",
-  "gimp",
 ];
 const backend = [
   "nodejs",
-  "denojs",
   "express",
   "nestjs",
   "swagger",
@@ -44,7 +44,7 @@ const SkillsGrid = () => {
 
   return (
     <TooltipProvider delayDuration={100}>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6">
+      <div className="flex flex-col gap-4">
         {categories.map(({ title, items }) => (
           <SkillsGroup key={title} title={title}>
             {items.map((item, idx) => (
@@ -58,3 +58,4 @@ const SkillsGrid = () => {
 };
 
 export default SkillsGrid;
+

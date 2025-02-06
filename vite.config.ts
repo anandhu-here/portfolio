@@ -10,6 +10,11 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    port: 3300, // Custom port number
+    strictPort: true, // Ensures Vite only uses this specific port
+    host: true, // Allows access from network
+  },
   build: {
     outDir: "dist",
     sourcemap: true,
